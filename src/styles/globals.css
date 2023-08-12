@@ -19,7 +19,7 @@
 
 body {
   height: 100dvh;
-  width:100dvh;
+  width:100dvw;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
