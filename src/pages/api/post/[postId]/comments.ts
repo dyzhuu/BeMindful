@@ -9,20 +9,21 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'GET') {
-    let { postId } = req.body
-    const likes = await prisma.like.findMany({
-      where: { postId: postId },
+    const { postId } = req.query;
+    const id = parseInt(postId as unknown as string);
+    const comments = await prisma.comment.findMany({
+      where: { postId: id },
     });
-    console.log(likes);
-    res.status(200).json({ likes });
+    res.status(200).json({ comments });
   } else if (req.method === 'POST') {
-    const { userId, postId } = req.body;
-    const like = await prisma.like.create({
+    const { userId, postId, content } = req.body;
+    const comment = await prisma.comment.create({
       data: {
+        content: content,
         userId: userId,
         postId: postId,
       },
     });
-    res.status(201).json(like);
+    res.status(201).json(comment);
   }
 }
