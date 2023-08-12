@@ -1,9 +1,10 @@
+## BeHealthy
+Started on 12/08
+<sub>Team: </sub>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
-
-First, run the development server:
-
+## Getting Started for Dev
 ```bash
 npm run dev
 # or
