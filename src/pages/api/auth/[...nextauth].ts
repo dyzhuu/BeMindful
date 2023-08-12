@@ -14,11 +14,11 @@ export const authOptions = {
   pages: {
     signIn: '/',
     newUser: '/',
+    error: '/home',
   },
   callbacks: {
-    async signIn({ user }: any) {
-      try {
-        console.log(user.name, user.email)
+    async signIn({ user, account }: any) {
+      if (!(await fetch(`${URL}/api/user/${user.email}`)).ok) {
         const res = await fetch(`${URL}/api/user`, {
           method: 'POST',
           headers: {
@@ -30,10 +30,14 @@ export const authOptions = {
             email: user.email,
           }),
         });
-        console.log(await res.json())
-      } catch {
       }
-      return true
+      return true;
+    },
+    async session({ session }: any) {
+      const res = await fetch(`${URL}/api/user/${session.user.email}`);
+      const userId = (await res.json()).user.id
+      session.user.id = userId;  
+      return session;
     },
   },
 };
