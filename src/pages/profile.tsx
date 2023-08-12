@@ -35,19 +35,47 @@ export default function Home() {
     <div
       className={styles.main}
     >
+      <div className="flex justify-between items-center w-full static">
+        <Link href="/friends"> {/* Link to Friends page */}
+          
+            <Image
+              src="/images/friends.png"
+              alt="Friends Icon"
+              width={40}
+              height={30}
+            />
+          
+        </Link>
+        <Link href="/home">
+            <h1 className="text-2xl font-bold text-foreground-rgb">BeHealthy</h1>
+        </Link>
+        <Link href="/profile"> {/* Link to Profile page */}
+          
+            <Image
+              src="/images/user.png"
+              alt="User Icon"
+              width={40}
+              height={30}
+            />
+          
+        </Link>
+      </div>
+
       <h1 className="text-5xl font-bold text-stone-800 mt-10 mb-5">{user.name}</h1>
       <Image src={user.pfp || defaultpfp} className={styles.logo} alt="pfp"/>
-      <h2 className="text-xl mt-1 w-80">{user.bio}</h2>
-
-      <Separator className="my-4" />
+      <p className="text-sm mt-1 w-80">{user.bio}</p>
       
       <div className={styles.messageContainer}>
         <h2>{user.streak}-day streak!</h2>
       </div>
 
-      {posts.map((message) => (
-        <FriendCard key={message.id} friend={message}/>
-      ))}
+      <h2>Posts:</h2>
+
+      <div className={styles.posts}>
+        {posts.map((message) => (
+          <FriendCard key={message.id} friend={message}/>
+        ))}
+     </div> 
     </div>
   )
 }
