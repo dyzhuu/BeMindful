@@ -11,6 +11,7 @@ export default async function handler(
   const { userId } = req.query;
   const feed = await prisma.user.findUnique({
     where: {
+      // @ts-ignore
       id: userId?.toString()
     },
     include: {
