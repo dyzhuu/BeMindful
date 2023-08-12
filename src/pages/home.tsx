@@ -3,9 +3,13 @@ import Image from 'next/image'
 import Head from 'next/head'
 import {useState, useEffect} from 'react'
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 const Home = () => {
   const [friends, setFriends] = useState<any[]>([]);
+  const session = useSession()
+
+  console.log(session.data?.user)
 
   useEffect(() => {
     // Fetch data from database or API
@@ -18,7 +22,6 @@ const Home = () => {
   }, []);
 
   return (
-        
     <>
         <Head>
         <title>BeHealthy - Keeping you mindful</title>
