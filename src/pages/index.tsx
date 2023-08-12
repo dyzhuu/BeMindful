@@ -21,17 +21,39 @@ const Home = () => {
     setFriends(fetchedFriends);
   }, []);
 
+  const [likes, setLikes] = useState({});
+  const [comments, setComments] = useState({});
+
+  
+  const handleLike = (postId) => {
+    setLikes(prevLikes => ({
+      ...prevLikes,
+      [postId]: (prevLikes[postId] || 0) + 1,
+    }));
+  };
+
+  // Function to handle commenting on a post
+  const handleComment = (postId, user, comment) => {
+    setComments(prevComments => ({
+      ...prevComments,
+      [postId]: [...(prevComments[postId] || []), { user, comment }],
+    }));
+  };
+  
+
+
   return (
         
     <>
         <Head>
-        <title>BeHealthy - Keeping you mindful</title>
+        <title>BeMindful - Keeping you mindful</title>
         <meta name="description" content="Get daily reminders to stay mindful in your life :)" />
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☺️</text></svg>"
         />
       </Head>
+
       
     <div className="flex flex-col items-center p-4 bg-gradient-to-r from-background-start-rgb to-background-end-rgb">
       <div className="flex justify-between items-center w-full">
@@ -46,7 +68,7 @@ const Home = () => {
           
         </Link>
         <Link href="/home">
-            <h1 className="text-2xl font-bold text-foreground-rgb">BeHealthy</h1>
+            <h1 className="text-2xl font-bold text-foreground-rgb">BeMindful</h1>
         </Link>
         <Link href="/profile"> {/* Link to Profile page */}
           
@@ -59,11 +81,34 @@ const Home = () => {
           
         </Link>
       </div>
+      <textarea 
+        placeholder="Enter your thoughts..."
+        className={`p-2 mt-4 border rounded`}
+        
+        //value={postText}
+        //onChange={handlePostChange}
+
+      />
       
+      <button
+        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 mt-2 rounded"
+        //onClick={handlePostSubmit}
+      >
+        Post
+      </button> 
+
       {friends.map(friend => (
-        <FriendCard key={friend.id} friend={friend} />
+        <FriendCard
+          key={friend.id}
+          friend={friend}
+          //user={currentUser}
+          handleLike={handleLike}
+          handleComment={handleComment}
+          likes={likes}
+          comments={comments}
+        />
       ))}
-      
+
     </div>
       
    </>

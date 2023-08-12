@@ -61,3 +61,8 @@ body {
   position: fixed;
   bottom: 0;
 }
+
+textarea {
+  width: 70%;
+  height: 50%;
+}
