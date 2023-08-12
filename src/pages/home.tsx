@@ -14,8 +14,16 @@ const Home = () => {
   console.log(session.data?.user)
 
   const friends = [
-    { id: 1, name: 'john', post: 'have a great day uigbrgiubogeoirgbelb' },
-    { id: 2, name: 'jack', post: 'have a great day' },
+    { id: 1, name: 'John', post: 'Wishing everyone a wonderful day! ☀️' },
+    { id: 2, name: 'Alice', post: 'Embracing the beauty of life today. 🌸' },
+    { id: 3, name: 'Michael', post: 'Stay positive and keep smiling! 😄' },
+    { id: 4, name: 'Sophia', post: 'Sending good vibes to all my friends! ✨' },
+    { id: 5, name: 'David', post: 'Chasing dreams and making memories. 🌟' },
+    { id: 6, name: 'Emily', post: 'Grateful for every moment. 🙏❤️' },
+    { id: 7, name: 'Oliver', post: 'Enjoying the little things in life. 🍃' },
+    { id: 8, name: 'Ava', post: 'Spreading love and positivity today! 💖' },
+    { id: 9, name: 'Ethan', post: 'Laughing with friends is the best therapy. 😆' },
+    { id: 10, name: 'Mia', post: 'Stay curious and keep exploring! 🌍🔍' },
   ];
 
   return (
