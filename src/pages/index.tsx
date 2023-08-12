@@ -16,7 +16,7 @@ export default function Home() {
       <div>
         <h1 className="text-6xl font-bold text-stone-800"><span className='text-6xl font-bold text-stone-800'>Be</span>Healthy</h1>
         <p className="text-2xl mt-1">Your health is our priority</p>
-        <Button className="mt-9" variant="contained" href="#">Sign in with Google</Button>
+        <Button className="mt-9" variant="contained" href="#">Sign in with Google!</Button>
       </div>
     </div>
   )
