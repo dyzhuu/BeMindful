@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import {useState, useEffect} from 'react'
 import defaultpfp from "../assets/Default_pfp.svg"
 import { Separator } from "@/components/ui/separator"
-import FriendCard from './FriendCard';
+import FriendCard from '../components/FriendCard';
 
 const inter = Inter({ subsets: ['latin'] })
 

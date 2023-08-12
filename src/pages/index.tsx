@@ -1,24 +1,13 @@
-import FriendCard from './FriendCard';
-import React, { useEffect, useState } from 'react';
+import FriendCard from '../components/FriendCard';
 import Image from 'next/image'
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import { useRouter } from 'next/router'
-import styles from './index.module.css';
-import Button from '@mui/material/Button';
+import Link from 'next/link';
 
 const Home = () => {
-  const [friends, setFriends] = useState([]);
-
-  useEffect(() => {
-    // Fetch data from database or API
-    // Example using dummy data
-    const fetchedFriends = [
-      { id: 1, name: "john", post: "have a great day uigbrgiubogeoirgbelb" },
-      { id: 2, name: "jack", post: "have a great day" },
-    ];
-    setFriends(fetchedFriends);
-  }, []);
+  const friends = [
+    { id: 1, name: 'john', post: 'have a great day uigbrgiubogeoirgbelb' },
+    { id: 2, name: 'jack', post: 'have a great day' },
+  ];
 
   return (
         
