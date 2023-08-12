@@ -25,6 +25,7 @@ export const authOptions = {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
+            id: user.id,
             username: user.name,
             email: user.email,
           }),

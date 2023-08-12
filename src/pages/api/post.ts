@@ -12,7 +12,7 @@ export default async function handler(
     const { authorId, content } = req.body;
     const post = await prisma.post.create({
       data: {
-        authorId: authorId,
+        authorId: authorId.toString(),
         content: content,
       },
     });

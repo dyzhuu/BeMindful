@@ -8,6 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { Textarea } from './ui/textarea';
 
 export function PostButton() {
@@ -23,7 +24,9 @@ export function PostButton() {
         <div className='grid gap-4 py-4'>
           <Textarea></Textarea>
         </div>
-        <Button type='submit'>Post</Button>
+        <DialogPrimitive.Close asChild>
+          <Button>Post</Button>
+        </DialogPrimitive.Close>
       </DialogContent>
     </Dialog>
   );

@@ -9,10 +9,9 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { userId } = req.query;
-  const id = parseInt(userId as unknown as string)
   const feed = await prisma.user.findUnique({
     where: {
-      id: id
+      id: userId as string
     },
     include: {
       following: {
