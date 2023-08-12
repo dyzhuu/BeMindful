@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build ",
     "start": "next start",
     "lint": "next lint"
   },
@@ -43,8 +43,6 @@
     "typescript": "5.1.6",
     "zod": "^3.21.4",
     "prisma": "^5.1.1"
-
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
