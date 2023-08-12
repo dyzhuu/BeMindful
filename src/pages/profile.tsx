@@ -3,10 +3,8 @@ import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from './profile.module.css';
-import Button from '@mui/material/Button';
 import {useState, useEffect} from 'react'
 import defaultpfp from "../../public/images/Default_pfp.svg"
-import { Separator } from "@/components/ui/separator"
 import FriendCard from '../components/FriendCard';
 
 const inter = Inter({ subsets: ['latin'] })
