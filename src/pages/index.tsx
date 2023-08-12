@@ -19,7 +19,7 @@ export default function LoginPage() {
           </div>
         </Card>
       </div>
-    );
+    )
   } else {
     router.push('/home');
   }
