@@ -71,9 +71,9 @@ export default function Home() {
       <Image src={user.pfp || defaultpfp} className={styles.logo} alt="pfp"/>
       <p className="text-sm mt-1 w-80">{user.bio}</p>
       
-      <div className={styles.messageContainer}>
-        <h2>{user.streak}-day streak!</h2>
-      </div>
+        <div className="bg-gradient-to-r from-red-500 to-yellow-500 p-2 rounded-md inline-block mt-2">
+          <h2 className="text-white text-sm">{user.streak}-day streak!</h2>
+        </div>
 
       <h2>Posts:</h2>
 
