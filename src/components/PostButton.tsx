@@ -69,11 +69,11 @@ export function PostButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant='outline'>Post</Button>
+        <Button variant='outline'>Share Your Gratitude</Button>
       </DialogTrigger>
       <DialogContent className='sm:max-w-[425px]'>
         <DialogHeader>
-          <DialogTitle>Post message</DialogTitle>
+          <DialogTitle>Express Gratitude</DialogTitle>
         </DialogHeader>
         <div className='grid gap-4 py-4'>
           <TextareaForm></TextareaForm>
