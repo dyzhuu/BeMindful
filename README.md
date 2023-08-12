@@ -11,7 +11,7 @@
 
 ## Getting Started for Dev
 ```bash
-npm clone https://github.com/dyzhuu/BeHealthy
+git clone https://github.com/dyzhuu/BeHealthy
 
 cd BeHealthy
 
