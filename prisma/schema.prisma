@@ -15,9 +15,20 @@ model User {
   username  String    @unique
   email     String    @unique
   streak    Int       @default(0)
-  Post      Post[]    
-  Like      Like[]
-  Comment   Comment[]
+  posts     Post[]
+  likes     Like[]
+  comments  Comment[]
+  followers Follows[] @relation("following")
+  following Follows[] @relation("follower")
+}
+
+model Follows {
+  follower    User @relation("follower", fields: [followerId], references: [id])
+  followerId  Int
+  following   User @relation("following", fields: [followingId], references: [id])
+  followingId Int
+
+  @@id([followerId, followingId])
 }
 
 model Post {
@@ -37,7 +48,7 @@ model Like {
   userId    Int
   post      Post     @relation(fields: [postId], references: [id])
   postId    Int
-} 
+}
 
 model Comment {
   id        Int      @id @default(autoincrement())
