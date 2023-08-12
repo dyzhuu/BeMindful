@@ -1,7 +1,12 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import FriendCard from './FriendCard';
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image'
+import Head from 'next/head'
+import { Inter } from 'next/font/google'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import styles from './index.module.css';
+import Button from '@mui/material/Button';
 
 const Home = () => {
   const [friends, setFriends] = useState([]);
@@ -17,6 +22,17 @@ const Home = () => {
   }, []);
 
   return (
+        
+    <>
+        <Head>
+        <title>BeHealthy - Keeping you mindful</title>
+        <meta name="description" content="Get daily reminders to stay mindful in your life :)" />
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☺️</text></svg>"
+        />
+      </Head>
+      
     <div className="flex flex-col items-center p-4 bg-gradient-to-r from-background-start-rgb to-background-end-rgb">
       <div className="flex justify-between items-center w-full">
         <Link href="/friends"> {/* Link to Friends page */}
@@ -49,6 +65,8 @@ const Home = () => {
       ))}
       
     </div>
+      
+   </>
   );
 };
 

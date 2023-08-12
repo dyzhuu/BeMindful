@@ -1,0 +1,26 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  column-gap: 10%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+  column-gap: 10%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 80%;
+  height: 50%;
+}
+
+.button{
+  margin-top: 5px;
+  background-color: #1343c0;
+}
