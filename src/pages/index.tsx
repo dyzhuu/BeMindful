@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import { Suspense } from 'react';
-import { Metadata } from 'next';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { signIn } from 'next-auth/react';

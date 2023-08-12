@@ -9,7 +9,10 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
-  
+  pages: {
+    signIn: '/',
+    newUser: '/',
+  },
 };
 
 export default NextAuth(authOptions);
