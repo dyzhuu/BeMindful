@@ -1,3 +1,5 @@
+![BeHealthy](https://github.com/dyzhuu/BeHealthy/assets/62681404/e4fa8310-d34c-4558-b82c-ce49c52513c5)
+
 ## BeHealthy
 Started on 12/08 Ended 13/08<br>
 <sub>Team: Eric, David, Raza, Hunter, Yvonne and Patricia</sub>
