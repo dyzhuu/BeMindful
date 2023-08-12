@@ -14,8 +14,8 @@ model User {
   id        Int       @id @default(autoincrement())
   username  String    @unique
   email     String    @unique
-  streak    Int
-  Post      Post[]
+  streak    Int       @default(0)
+  Post      Post[]    
   Like      Like[]
   Comment   Comment[]
 }
