@@ -6,9 +6,10 @@ import { Inter } from 'next/font/google'
 import { useRouter } from 'next/router'
 import styles from './index.module.css';
 import Button from '@mui/material/Button';
+import Link from 'next/link';
 
 const Home = () => {
-  const [friends, setFriends] = useState([]);
+  const [friends, setFriends] = useState<any[]>([]);
 
   useEffect(() => {
     // Fetch data from database or API

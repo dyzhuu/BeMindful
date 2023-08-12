@@ -5,16 +5,24 @@ import { useRouter } from 'next/router'
 import styles from './profile.module.css';
 import Button from '@mui/material/Button';
 import {useState, useEffect} from 'react'
-import defaultpfp from "../assets/Default_pfp.svg"
+import defaultpfp from "../../public/images/Default_pfp.svg"
 import { Separator } from "@/components/ui/separator"
 import FriendCard from './FriendCard';
 
 const inter = Inter({ subsets: ['latin'] })
 
+interface user {
+  id: number,
+  name: string,
+  pfp: string,
+  streak: number,
+  bio: string
+}
+
 export default function Home() {
   const router = useRouter()
-  const [posts, setPosts] = useState([])
-  const [user, setUser] = useState([])
+  const [posts, setPosts] = useState<any[]>([])
+  const [user, setUser] = useState<user>({id: 0, name: '', pfp: '', streak: 0, bio: ''})
   
   useEffect(() => {
 
@@ -75,7 +83,7 @@ export default function Home() {
         {posts.map((message) => (
           <FriendCard key={message.id} friend={message}/>
         ))}
-     </div> 
+      </div> 
     </div>
   )
 }
