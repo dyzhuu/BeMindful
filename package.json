@@ -20,6 +20,7 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.4",
+    "@tanstack/react-query": "^4.32.6",
     "@types/css-modules": "^1.0.2",
     "@types/node": "20.4.10",
     "@types/react": "18.2.20",
@@ -33,6 +34,7 @@
     "next": "13.4.13",
     "next-auth": "^4.23.0",
     "postcss": "8.4.27",
+    "prisma": "^5.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.4",
@@ -41,8 +43,6 @@
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.6",
     "typescript": "5.1.6",
-    "zod": "^3.21.4",
-    "prisma": "^5.1.1"
-  },
-  "devDependencies": {}
+    "zod": "^3.21.4"
+  }
 }
