@@ -3,17 +3,9 @@ import Image from 'next/image'
 import Head from 'next/head'
 import {useState, useEffect} from 'react'
 import Link from 'next/link';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import CreateIcon from '@mui/icons-material/Create';
-import GroupIcon from '@mui/icons-material/Group';
-import styles from './home.module.css'
-import { Icon } from '@mui/material';
 
 const Home = () => {
   const [friends, setFriends] = useState<any[]>([]);
-
-  function popup() {
-  }
 
   useEffect(() => {
     // Fetch data from database or API
@@ -25,8 +17,7 @@ const Home = () => {
     setFriends(fetchedFriends);
   }, []);
 
-  return (
-        
+  return ( 
     <>
         <Head>
         <title>BeHealthy - Keeping you mindful</title>
@@ -39,16 +30,31 @@ const Home = () => {
       
     <div className="flex flex-col items-center p-4 bg-gradient-to-r from-background-start-rgb to-background-end-rgb">
       <div className="flex justify-between items-center w-full">
-        <button onClick={popup}> {/* Link to Friends page */}
-          <CreateIcon fontSize='large'/>
-        </button>
+        <Link href="/friends"> {/* Link to Friends page */}
+          
+            <Image
+              src="/images/friends.png"
+              alt="Friends Icon"
+              width={40}
+              height={30}
+            />
+          
+        </Link>
         <Link href="/home">
             <h1 className="text-2xl font-bold text-foreground-rgb">BeHealthy</h1>
         </Link>
         <Link href="/profile"> {/* Link to Profile page */}
-          <AccountCircleIcon fontSize='large'/>
+          
+            <Image
+              src="/images/user.png"
+              alt="User Icon"
+              width={40}
+              height={30}
+            />
+          
         </Link>
       </div>
+      
 
       {friends.map(friend => (
         <FriendCard key={friend.id} friend={friend} />
@@ -56,7 +62,7 @@ const Home = () => {
       
     </div>
       
-   </>
+    </>
   );
 };
 
