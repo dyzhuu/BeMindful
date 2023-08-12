@@ -44,7 +44,6 @@ export default function Home() {
     >
       <div className="flex justify-between items-center w-full static">
         <Link href="/friends"> {/* Link to Friends page */}
-          
             <Image
               src="/images/friends.png"
               alt="Friends Icon"
