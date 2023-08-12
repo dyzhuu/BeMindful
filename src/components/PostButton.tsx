@@ -35,9 +35,10 @@ export function TextareaForm() {
   
   function onSubmit(data: any) {
     const postData = {
-      authorId: session.data?.user?.id,
-      content: data.content
+      authorId: session.data?.user?.id!,
+      content: data.content as string
     }
+    mutation.mutate(postData);
     toast({
       title: 'You submitted the following values:',
       description: (
@@ -49,7 +50,7 @@ export function TextareaForm() {
   }
 
   const mutation = useMutation({
-    mutationFn: async (data) => {
+    mutationFn: async (data: {authorId: string, content: string}) => {
       return fetch(
         `api/post`,
         {
