@@ -11,13 +11,24 @@ datasource db {
 }
 
 model User {
-  id        Int       @id @default(autoincrement())
-  username  String    @unique
+  id        String       @id
+  username  String    
   email     String    @unique
-  streak    Int
-  Post      Post[]
-  Like      Like[]
-  Comment   Comment[]
+  streak    Int       @default(0)
+  posts     Post[]
+  likes     Like[]
+  comments  Comment[]
+  followers Follows[] @relation("following")
+  following Follows[] @relation("follower")
+}
+
+model Follows {
+  follower    User @relation("follower", fields: [followerId], references: [id])
+  followerId  String
+  following   User @relation("following", fields: [followingId], references: [id])
+  followingId String
+
+  @@id([followerId, followingId])
 }
 
 model Post {
@@ -25,7 +36,7 @@ model Post {
   content   String
   createdAt DateTime  @default(now())
   author    User      @relation(fields: [authorId], references: [id])
-  authorId  Int
+  authorId  String
   likes     Like[]
   comments  Comment[]
 }
@@ -34,17 +45,17 @@ model Like {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id])
-  userId    Int
+  userId    String
   post      Post     @relation(fields: [postId], references: [id])
   postId    Int
-} 
+}
 
 model Comment {
   id        Int      @id @default(autoincrement())
   content   String
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id])
-  userId    Int
+  userId    String
   post      Post     @relation(fields: [postId], references: [id])
   postId    Int
 }

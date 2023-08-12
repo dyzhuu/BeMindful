@@ -1,12 +1,10 @@
-import FriendCard from './FriendCard';
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image'
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import styles from './index.module.css';
-import Button from '@mui/material/Button';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { redirect, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import FriendCard from '@/components/FriendCard';
+import { Link } from 'lucide-react';
+import { Head } from 'next/document';
 
 const Home = () => {
   const [friends, setFriends] = useState([]);
