@@ -1,69 +1,26 @@
-import FriendCard from '../components/FriendCard';
-import Image from 'next/image'
-import Head from 'next/head'
-import {useState, useEffect} from 'react'
-import Link from 'next/link';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { signIn, useSession } from 'next-auth/react';
+import { redirect, useRouter } from 'next/navigation';
 
-const Home = () => {
-  const [friends, setFriends] = useState<any[]>([]);
-
-  useEffect(() => {
-    // Fetch data from database or API
-    // Example using dummy data
-    const fetchedFriends = [
-      { id: 1, name: "john", post: "have a great day uigbrgiubogeoirgbelb" },
-      { id: 2, name: "jack", post: "have a great day" },
-    ];
-    setFriends(fetchedFriends);
-  }, []);
-
-  return ( 
-    <>
-        <Head>
-        <title>BeHealthy - Keeping you mindful</title>
-        <meta name="description" content="Get daily reminders to stay mindful in your life :)" />
-        <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☺️</text></svg>"
-        />
-      </Head>
-      
-    <div className="flex flex-col items-center p-4 bg-gradient-to-r from-background-start-rgb to-background-end-rgb">
-      <div className="flex justify-between items-center w-full">
-        <Link href="/friends"> {/* Link to Friends page */}
-          
-            <Image
-              src="/images/friends.png"
-              alt="Friends Icon"
-              width={40}
-              height={30}
-            />
-          
-        </Link>
-        <Link href="/home">
-            <h1 className="text-2xl font-bold text-foreground-rgb">BeHealthy</h1>
-        </Link>
-        <Link href="/profile"> {/* Link to Profile page */}
-          
-            <Image
-              src="/images/user.png"
-              alt="User Icon"
-              width={40}
-              height={30}
-            />
-          
-        </Link>
+export default function LoginPage() {
+  const router = useRouter();
+  const session = useSession();
+  if (session.status === 'loading') {
+    return
+  }
+  if (session.status === 'unauthenticated') {
+    return (
+      <div className='flex justify-center items-center h-[100dvh]'>
+        <Card className='border-card shadow-none md:border-border md:shadow-sm h-[100dvh] w-[100dvw] md:h-fit md:min-h-[650px] md:max-w-[480px] p-10 md:p-16 md:py-24 flex justify-center items-center'>
+          <div className='flex flex-col w-[350px] text-center space-y-8'>
+            <h1 className='text-3xl font-semibold tracking-tight'>Log In</h1>
+            <Button onClick={() => signIn('google')}>Log in with Google</Button>
+          </div>
+        </Card>
       </div>
-      
-
-      {friends.map(friend => (
-        <FriendCard key={friend.id} friend={friend} />
-      ))}
-      
-    </div>
-      
-    </>
-  );
-};
-
-export default Home;
+    );
+  } else {
+    router.push('/home');
+  }
+}

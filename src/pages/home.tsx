@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 import {useState, useEffect} from 'react'
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CreateIcon from '@mui/icons-material/Create';
 import GroupIcon from '@mui/icons-material/Group';
@@ -11,6 +12,9 @@ import { Icon } from '@mui/material';
 
 const Home = () => {
   const [friends, setFriends] = useState<any[]>([]);
+  const session = useSession()
+
+  console.log(session.data?.user)
 
   function popup() {
   }
@@ -26,7 +30,6 @@ const Home = () => {
   }, []);
 
   return (
-        
     <>
         <Head>
         <title>BeHealthy - Keeping you mindful</title>
