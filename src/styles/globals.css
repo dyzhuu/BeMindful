@@ -16,7 +16,34 @@
   }
 }
 
+.navbar {
+  justify-content: center;
+}
+
+.friend-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  height: 70%;
+  width: 70%;
+}
+
+.friend-card h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.friend-card p {
+  font-size: 14px;
+  color: #555;
+}
+
 body {
+  height: 100dvh;
+  width:100dvw;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +51,12 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  background-color: #B9F5D4;
+}
+
+.navbar p{
+  background-color: grey;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
