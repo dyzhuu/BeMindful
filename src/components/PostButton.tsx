@@ -29,7 +29,7 @@ export function TextareaForm() {
   const form = useForm();
   const queryClient = useQueryClient();
   const session = useSession()
-
+  console.log(session)
 
   const {toast} = useToast()
   
@@ -63,7 +63,7 @@ export function TextareaForm() {
       );
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['feed'] });
+      // queryClient.invalidateQueries({ queryKey: ['feed'] });
     },
     onError: () => {
       toast({
