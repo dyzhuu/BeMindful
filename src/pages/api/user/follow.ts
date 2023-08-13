@@ -6,7 +6,17 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === 'POST') {
+  if (req.method === 'DELETE') {
+    const { followerId, followingId } = req.body;
+    const post = await prisma.follows.deleteMany({
+      where: {
+        followerId: followerId,
+        followingId: followingId,
+      },
+    });
+    res.status(201).json(post);
+  }
+  else if (req.method === 'POST') {
     const { followerId, followingId } = req.body;
     const post = await prisma.follows.create({
       data: {

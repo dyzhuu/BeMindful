@@ -11,6 +11,9 @@ export default async function handler(
     const user = await prisma.user.findUnique({
       where: {
         email: email?.toString()
+      },
+      include: {
+        posts: true
       }
     });
     if (!user) {

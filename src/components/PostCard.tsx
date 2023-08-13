@@ -57,10 +57,7 @@ const PostCard = ({ post }: any) => {
           userId: session.data?.user?.id,
           postId: post.id
         }),
-      });
-
-      console.log(await res.json())
-      
+      });      
     }
   }
 

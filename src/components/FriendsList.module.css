@@ -15,10 +15,6 @@
   width: 10rem;
 }
 
-.bio{
-
-}
-
 .posts{
   display: flex;
   flex-direction: column;
@@ -26,20 +22,14 @@
   overflow-y: scroll;
 }
 
-.messageContainer{
-  background-color:rgb(255, 255, 255);
-  height: 6vh;
-  width: 80vw;
-  margin: 10px;
-  border-radius: 10px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+@media only screen and (max-width: 420px) {
+  .posts{
+    width: 105%;
+  }
 }
-.friendCard{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+
+@media only screen and (min-width: 420px) {
+  .posts{
+    width: 90%;
+  }
 }

@@ -6,6 +6,7 @@ import styles from './friends.module.css';
 import {useState, useEffect} from 'react'
 import AddFriendCard from '@/components/AddFriendCard';
 import HomeIcon from '@mui/icons-material/Home';
+import FriendsList from '@/components/FriendsList';
 
 const inter = Inter({ subsets: ['latin'] })
 interface user {
@@ -16,24 +17,6 @@ interface user {
 }
 
 export default function Home() {
-  const router = useRouter()
-  const [accounts, setAccounts] = useState<any[]>([{id: 0, name: '', pfp: '', following: false}])
-  
-  useEffect(() => {
-
-    const accounts = [
-      { id: 1, name: "Eric", following: false},
-      { id: 2, name: "Yvonne", following: false},
-      { id: 3, name: "David", following: false},
-      { id: 4, name: "Hunter", following: false},
-      { id: 5, name: "Patricia", following: false},
-      { id: 6, name: "Him", following: false},
-      { id: 7, name: "Robert", following: false},
-      { id: 8, name: "Robert", following: false},
-      { id: 9, name: "Jessica", following: false},
-    ];
-    setAccounts(accounts);
-  }, [])
 
   return (
     <div className={styles.main}>
@@ -55,12 +38,7 @@ export default function Home() {
       </div>
       
       <h1 className="text-5xl font-bold text-stone-800 mt-10 mb-5">Friends</h1>
-
-      <div className={styles.posts}>
-        {accounts.map((account) => (
-          <AddFriendCard key={account.id} addfriend={account}/>
-        ))}
-      </div> 
+      <FriendsList></FriendsList>
     </div>
   )
 }
