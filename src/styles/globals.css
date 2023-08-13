@@ -139,3 +139,72 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.mainone{
+  background: linear-gradient(354.34deg, rgba(14, 34, 119, 0.43) -82.02%, rgba(14, 34, 119, 0) 42.34%),
+  linear-gradient(247.08deg, rgba(14, 34, 119, 0.43) 5.94%, rgba(14, 34, 119, 0) 92.57%),
+  linear-gradient(rgba(73, 171, 182, 0) 0%, rgba(248, 235, 228, 0.325) 113.02%),
+  linear-gradient(rgba(63, 136, 193, 0.2) 0%, rgba(207, 218, 225, 0.2) 100%),
+  rgb(32, 143, 228);
+}
+
+.balloon {
+position: absolute;
+top: 55%; /* Adjust this value to position the balloon */
+left: 10%; /* Adjust this value to position the balloon */
+width: 200px; /* Adjust the size as needed */
+height: 150px; /* Adjust the size as needed */
+background-image: url('https://assets.wakingup.com/web/images/home/balloon-1.png');
+background-size: contain;
+background-repeat: no-repeat;
+}
+
+.bird {
+position: absolute;
+bottom: 35%; /* Adjust this value to position the bird */
+right: 10%; /* Adjust this value to position the bird */
+width: 180px; /* Adjust the size as needed */
+background-image: url('https://assets.wakingup.com/web/images/home/bird-3.png');
+background-size: contain;
+background-repeat: no-repeat;
+height: 90px; /* Adjust the size as needed */
+}
+
+
+.cloud1 {
+position: absolute;
+top: 10%; /* Adjust to your preference */
+left: 6%; /* Adjust to your preference */
+width: 500px; /* Adjust to your preference */
+height: 190px; /* Adjust to your preference */
+background-image: url('https://assets.wakingup.com/web/images/home/cloud-1a.png');
+background-size: contain;
+background-repeat: no-repeat;
+}
+
+.cloud2 {
+position: absolute;
+top: 20%; /* Adjust to your preference */
+right: 5%; /* Adjust to your preference */
+width: 350px; /* Adjust to your preference */
+height: 250px; /* Adjust to your preference */
+background-image: url('https://assets.wakingup.com/web/images/home/cloud-2a.png');
+background-size: contain;
+background-repeat: no-repeat;
+}
+
+.cloud3 {
+position: absolute;
+bottom: 5%; /* Adjust to your preference */
+right: 20%; /* Adjust to your preference */
+width: 500px; /* Adjust to your preference */
+height: 190px; /* Adjust to your preference */
+background-image: url('https://assets.wakingup.com/web/images/home/cloud-3a.png');
+background-size: contain;
+background-repeat: no-repeat;
+}
+
+
+
+
+
