@@ -35,11 +35,11 @@ export const authOptions = {
     },
     async session({ session }: any) {
       const res = await fetch(`${URL}/api/user/${session.user.email}`);
-      const userId = (await res.json()).user.id
-      session.user.id = userId;  
+      const userId = (await res.json()).user.id;
+      session.user.id = userId;
       return session;
     },
-  },
+  }
 };
 
 export default NextAuth(authOptions);

@@ -1,8 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/lib/client';
 
 export default async function handler(
   req: NextApiRequest,
@@ -18,7 +16,11 @@ export default async function handler(
         include: {
           following: {
             include: {
-              posts: true
+              posts: {
+                include: {
+                  author: true
+                }
+              }
             }
           }
         }
@@ -31,10 +33,17 @@ export default async function handler(
       id: userId?.toString(),
     },
     include: {
-      posts: true
+      posts: {
+        include: {
+          author: true
+        }
+      }
     }
   }))?.posts;
   const followingPosts: any = feed?.following.map(user => user.following.posts).flat()
+  if (!followingPosts) {
+    return ownPosts
+  }
   const allPosts = followingPosts.concat(ownPosts)
   allPosts.sort((a: any, b: any) => {
     return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();

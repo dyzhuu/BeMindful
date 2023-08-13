@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import styles from './profile.module.css';
 import {useState, useEffect} from 'react'
 import defaultpfp from '../../public/images/Default_pfp.svg'
-import FriendCard from '@/components/FriendCard';
+import PostCard from '@/components/PostCard';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 
@@ -65,7 +65,7 @@ export default function Home() {
 
       <div className={styles.posts}>
         {posts.map((message) => (
-          <FriendCard key={message.id} friend={message}/>
+          <PostCard key={message.id} friend={message}/>
         ))}
       </div> 
     </div>
