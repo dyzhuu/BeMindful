@@ -22,15 +22,15 @@ export default function Home() {
   useEffect(() => {
 
     const accounts = [
-      { id: 1, name: "user", following: false},
-      { id: 2, name: "user", following: false},
-      { id: 3, name: "user", following: false},
-      { id: 4, name: "user", following: false},
-      { id: 5, name: "user", following: false},
-      { id: 6, name: "user", following: false},
-      { id: 7, name: "user", following: false},
-      { id: 8, name: "user", following: false},
-      { id: 9, name: "user", following: false},
+      { id: 1, name: "Eric", following: false},
+      { id: 2, name: "Yvonne", following: false},
+      { id: 3, name: "David", following: false},
+      { id: 4, name: "Hunter", following: false},
+      { id: 5, name: "Patricia", following: false},
+      { id: 6, name: "Him", following: false},
+      { id: 7, name: "Robert", following: false},
+      { id: 8, name: "Robert", following: false},
+      { id: 9, name: "Jessica", following: false},
     ];
     setAccounts(accounts);
   }, [])

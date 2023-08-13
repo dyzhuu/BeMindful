@@ -63,9 +63,8 @@ export default function Home() {
       <h2 className={'text-xl mt-5'}>Posts:</h2>
 
       <div className={styles.posts}>
-        {posts.map((message) => (
-          <PostCard key={message.id} friend={message}/>
-        ))}
+        
+        
       </div> 
     </div>
   )

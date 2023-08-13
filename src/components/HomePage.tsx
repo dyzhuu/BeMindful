@@ -1,13 +1,10 @@
 import PostCard from './PostCard';
 import Image from 'next/image'
 import Head from 'next/head'
-import {useState, useEffect} from 'react'
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
-import { Icon } from '@mui/material';
-import { Button } from '@/components/ui/button';
 import { PostButton } from '@/components/PostButton';
 import { useQuery } from '@tanstack/react-query';
+import { CircularProgress } from '@mui/material';
 
 export const HomePage = ({id}: any) => {
   const { data, isLoading, isError } = useQuery({
@@ -21,7 +18,9 @@ export const HomePage = ({id}: any) => {
   });
 
   if (isLoading) {
-    return('Loading')
+    return(<div className={`w-screen h-screen flex items-center justify-center`}>
+      <CircularProgress size="10rem"/>
+    </div>)
   }
 
   return (
