@@ -7,6 +7,7 @@ import {useState, useEffect} from 'react'
 import defaultpfp from '../../public/images/Default_pfp.svg'
 import FriendCard from '@/components/FriendCard';
 import HomeIcon from '@mui/icons-material/Home';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const inter = Inter({ subsets: ['latin'] })
 interface user {
@@ -48,14 +49,7 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-foreground-rgb">BeMindful</h1>
         </Link>
         <Link href="/profile"> {/* Link to Profile page */}
-          
-            <Image
-              src="/images/user.png"
-              alt="User Icon"
-              width={40}
-              height={30}
-            />
-          
+          <SettingsIcon sx={{ fontSize: 40 }}/>
         </Link>
       </div>
       
@@ -63,11 +57,11 @@ export default function Home() {
       <Image src={user.pfp || defaultpfp} className={styles.logo} alt="pfp"/>
       <p className="text-sm mt-1 w-80">{user.bio}</p>
       
-        <div className="bg-gradient-to-r from-red-500 to-yellow-500 p-2 rounded-md inline-block mt-2">
+        <div className={`${"bg-gradient-to-r from-red-500 to-yellow-500"} p-2 rounded-md inline-block mt-2`}>
           <h2 className="text-white text-sm">{user.streak}-day streak!</h2>
         </div>
 
-      <h2 className={'text-xl'}>Posts:</h2>
+      <h2 className={'text-xl mt-5'}>Posts:</h2>
 
       <div className={styles.posts}>
         {posts.map((message) => (

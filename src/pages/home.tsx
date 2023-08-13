@@ -40,7 +40,7 @@ const Home = () => {
         />
       </Head>
       <div className='flex flex-col items-center p-4 bg-gradient-to-r from-background-start-rgb to-background-end-rgb'>
-        <div className='flex justify-between items-center w-full'>
+        <div className='flex justify-between items-center w-full mb-10'>
           <Link href='/friends'>
             {' '}
             {/* Link to Friends page */}
@@ -78,7 +78,7 @@ const Home = () => {
 
 <footer className="bg-white p-8">
   <div className="container mx-auto text-center">
-    <h1 className="text-2xl font-bold mb-4 text-black">BeHealthy - An Online Graduation Project</h1>
+    <h1 className="text-2xl font-bold mb-4 text-black">BeMindful - An Online Graduation Project</h1>
     <p className="text-xl text-black" role="img" aria-label="calendar">📅</p> 
     <p className="mb-2 text-black">Started on 12/08 Ended on 13/08</p>
     <p className="text-xl text-black" role="img" aria-label="calendar">📅</p>
