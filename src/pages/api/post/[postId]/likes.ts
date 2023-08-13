@@ -1,8 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/lib/client';
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,7 +12,7 @@ export default async function handler(
     const likes = await prisma.like.findMany({
       where: { postId: id },
     });
-    res.status(200).json({ likes });
+    res.status(200).json(likes.length);
   } else if (req.method === 'POST') {
     const { userId, postId } = req.body;
     const like = await prisma.like.create({

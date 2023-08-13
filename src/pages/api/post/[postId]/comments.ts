@@ -1,8 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/lib/client';
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,6 +11,9 @@ export default async function handler(
     const id = parseInt(postId as unknown as string);
     const comments = await prisma.comment.findMany({
       where: { postId: id },
+      include: {
+        user: true
+      }
     });
     res.status(200).json({ comments });
   } else if (req.method === 'POST') {

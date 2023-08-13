@@ -63,7 +63,7 @@ export function TextareaForm() {
       );
     },
     onSuccess: () => {
-      // queryClient.invalidateQueries({ queryKey: ['feed'] });
+      queryClient.invalidateQueries({ queryKey: ['feed'] });
     },
     onError: () => {
       toast({
