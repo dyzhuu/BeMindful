@@ -10,17 +10,7 @@
 [Click here to view the working app view online here](https://behealthy-teal.vercel.app).😊
 
 ## Intro
-Welcome to BeMindful – a captivating digital haven meticulously crafted using the powerful trio of Next.JS, Prisma, and Vercel. This repository houses the codebase for a unique platform that invites you to embark on a journey of mindfulness and gratitude. Connect with your friends aswell.
-
-## About BeMindful
-At its core, BeMindful is more than just a website; it's an immersive experience designed to facilitate introspection and amplify gratitude in your life. By harnessing the capabilities of Next.JS, Prisma, and Vercel, BeMindful offers a seamless, enriching space where you can effortlessly capture and reflect upon the moments that evoke a sense of thankfulness.
-
-## Tech Stack
-Next.JS: With Next.JS, BeMindful delivers an unparalleled user experience. Seamlessly navigate through the platform, engaging with its features in a way that feels both natural and therapeutic.
-
-Prisma: The backbone of BeMindful's functionality, Prisma ensures secure storage and efficient management of your mindful entries. Your thoughts are organized and ready for you to revisit whenever you seek inspiration or introspection.
-
-Vercel: Powering the hosting of BeMindful, Vercel guarantees swift loading times, seamless updates, and a reliable environment. This synergy allows you to immerse yourself in mindfulness without technical distractions.
+Welcome and Greetings to BeMindful! developed using Next.JS, Prisma, and Vercel. Within this repository, you will find the codebase for a daily gratitude journal tracker.
 
 ## Getting Started for Dev
 ```bash
@@ -45,3 +35,13 @@ vercel
 # Review everything to make sure it's accurate.
 # Deploy!
 ```
+
+## About BeMindful
+You can use your Google account to log in, and then it's like a live notification board. BeMindful isn't just a regular website – it's built using Next.JS, Prisma, and Vercel. It provides a simple and enjoyable place to record and think about the moments that make you feel grateful.
+
+## Tech Stack
+<B>Next.JS:</b> Front end frame work ensures fast dev time.
+
+<b>Prisma:</b>  Prisma ensures secure storage and efficient management of your mindful MYSQL records.
+
+<b>Vercel:</b> Vercel guarantees swift loading times, seamless updates, and a reliable environment.
