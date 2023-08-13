@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const PostCard = ({ post }: any) => {
   const [showCommentBox, setShowCommentBox] = useState(false);
@@ -31,7 +32,7 @@ const PostCard = ({ post }: any) => {
   });
   
   if (commentQuery.isLoading) {
-    return
+    return <Skeleton className='h-[70%] w-[70%] m-[10px] p-[20px]'></Skeleton>;
   }
 
   const comments = commentQuery?.data?.comments

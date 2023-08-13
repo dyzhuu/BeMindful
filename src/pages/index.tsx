@@ -1,12 +1,13 @@
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { signIn, useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React from 'react'; // Added React import
 
 export default function LoginPage() {
   const router = useRouter();
-  const session = useSession()  
+  const session = useSession();
+  
 
   
   if (session.status === 'unauthenticated') {
@@ -27,5 +28,8 @@ export default function LoginPage() {
         </Card>
       </div>
     );
-  } 
+  } else {
+    router.push('/home');
+    return null;
+  }
 }
