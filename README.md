@@ -1,7 +1,7 @@
-![BeHealthy](https://github.com/dyzhuu/BeHealthy/assets/62681404/e4fa8310-d34c-4558-b82c-ce49c52513c5)
+![BeMindful](https://github.com/dyzhuu/BeHealthy/assets/62681404/7a9687c4-a111-40fc-93ae-02a476b10330)
 
 <p style="align:center;">
-  <h1 style="align:center;">BeHealthy</h1>
+  <h1 style="align:center;">BeMindful</h1>
   Started on 12/08 Ended 13/08<br>
   <sub>Team: Eric, David, Raza, Hunter, Yvonne and Patricia</sub>
 </p>
