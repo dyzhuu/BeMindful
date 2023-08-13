@@ -54,18 +54,6 @@ export default function Home() {
       </div>
       
       <h1 className="text-5xl font-bold text-stone-800 mt-10 mb-5">{user.name}</h1>
-      <p className="text-sm mt-1 w-80">{user.bio}</p>
-      
-        <div className={`${"bg-gradient-to-r from-red-500 to-yellow-500"} p-2 rounded-md inline-block mt-2`}>
-          <h2 className="text-white text-sm">{user.streak}-day streak!</h2>
-        </div>
-
-      <h2 className={'text-xl mt-5'}>Posts:</h2>
-
-      <div className={styles.posts}>
-        
-        
-      </div> 
     </div>
   )
 }
