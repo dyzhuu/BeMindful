@@ -72,7 +72,6 @@ export const HomePage = ({id}: any) => {
           <PostCard
             key={post.id}
             post={post}
-            //user={currentUser}
           />
         ))}
       </div>
