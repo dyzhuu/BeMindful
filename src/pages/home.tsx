@@ -74,6 +74,28 @@ const Home = () => {
           <FriendCard key={friend.id} friend={friend} />
         ))}
       </div>
+
+
+<footer className="bg-white p-8">
+  <div className="container mx-auto text-center">
+    <h1 className="text-2xl font-bold mb-4 text-black">BeHealthy - An Online Graduation Project</h1>
+    <p className="text-xl text-black" role="img" aria-label="calendar">📅</p> 
+    <p className="mb-2 text-black">Started on 12/08 Ended on 13/08</p>
+    <p className="text-xl text-black" role="img" aria-label="calendar">📅</p>
+    <p className="text-lg mb-4 text-black">Team:</p>
+    <p className="mb-2 text-black">
+      <a href="https://github.com/eric-profile" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">Eric</a>, 
+      <a href="https://github.com/david-profile" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">David</a>, 
+      <a href="https://github.com/raza-profile" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">Raza</a>, 
+      <a href="https://github.com/hunter-profile" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">Hunter</a>, 
+      <a href="https://github.com/yvonne-profile" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">Yvonne</a>, 
+      and 
+      <a href="https://github.com/patricia-profile" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">Patricia</a>
+    </p>
+  </div>
+</footer>
+
+      
     </>
   );
 };
