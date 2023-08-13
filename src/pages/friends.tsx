@@ -22,15 +22,15 @@ export default function Home() {
   useEffect(() => {
 
     const accounts = [
-      { id: 1, name: "user", pfp: "", following: false},
-      { id: 2, name: "user", pfp: "", following: false},
-      { id: 3, name: "user", pfp: "", following: false},
-      { id: 4, name: "user", pfp: "", following: false},
-      { id: 5, name: "user", pfp: "", following: false},
-      { id: 6, name: "user", pfp: "", following: false},
-      { id: 7, name: "user", pfp: "", following: false},
-      { id: 8, name: "user", pfp: "", following: false},
-      { id: 9, name: "user", pfp: "", following: false},
+      { id: 1, name: "user", following: false},
+      { id: 2, name: "user", following: false},
+      { id: 3, name: "user", following: false},
+      { id: 4, name: "user", following: false},
+      { id: 5, name: "user", following: false},
+      { id: 6, name: "user", following: false},
+      { id: 7, name: "user", following: false},
+      { id: 8, name: "user", following: false},
+      { id: 9, name: "user", following: false},
     ];
     setAccounts(accounts);
   }, [])
@@ -45,18 +45,16 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-foreground-rgb">BeMindful</h1>
         </Link>
         <Link href="/profile"> {/* Link to Profile page */}
-          
             <Image
               src="/images/user.png"
               alt="User Icon"
               width={40}
               height={30}
             />
-          
         </Link>
       </div>
       
-      <h1 className="text-5xl font-bold text-stone-800 mt-10 mb-5">Friends:</h1>
+      <h1 className="text-5xl font-bold text-stone-800 mt-10 mb-5">Friends</h1>
 
       <div className={styles.posts}>
         {accounts.map((account) => (

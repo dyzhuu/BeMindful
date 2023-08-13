@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from './profile.module.css';
 import {useState, useEffect} from 'react'
-import defaultpfp from '../../public/images/Default_pfp.svg'
 import FriendCard from '@/components/FriendCard';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -54,7 +53,6 @@ export default function Home() {
       </div>
       
       <h1 className="text-5xl font-bold text-stone-800 mt-10 mb-5">{user.name}</h1>
-      <Image src={user.pfp || defaultpfp} className={styles.logo} alt="pfp"/>
       <p className="text-sm mt-1 w-80">{user.bio}</p>
       
         <div className={`${"bg-gradient-to-r from-red-500 to-yellow-500"} p-2 rounded-md inline-block mt-2`}>

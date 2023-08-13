@@ -7,8 +7,6 @@ import styles from './AddFriendCard.module.css';
 const AddFriendCard = ({ addfriend }: any) => {
   return (
     <div className={`friend-card ${styles.friendCard}`}>
-      <Image src={addfriend.pfp || defaultpfp} alt="Profile Picture" className="w-10 h-10 rounded-full" />
-
       <h2 className="w-10 ml-5 mr-5">{addfriend.name}</h2>
       <Button variant='outlined' >Follow</Button>
     </div>

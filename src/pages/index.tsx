@@ -6,8 +6,7 @@ import React from 'react'; // Added React import
 
 export default function LoginPage() {
   const router = useRouter();
-  const session = useSession();
-  
+  const session = useSession()  
 
   
   if (session.status === 'unauthenticated') {
@@ -28,8 +27,5 @@ export default function LoginPage() {
         </Card>
       </div>
     );
-  } else {
-    router.push('/home');
-    return null;
-  }
+  } 
 }
