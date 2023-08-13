@@ -7,6 +7,7 @@ import {useState, useEffect} from 'react'
 import AddFriendCard from '@/components/AddFriendCard';
 import HomeIcon from '@mui/icons-material/Home';
 import FriendsList from '@/components/FriendsList';
+import { useSession } from 'next-auth/react';
 
 const inter = Inter({ subsets: ['latin'] })
 interface user {
@@ -17,6 +18,7 @@ interface user {
 }
 
 export default function Home() {
+  const session = useSession({ required: true });
 
   return (
     <div className={styles.main}>

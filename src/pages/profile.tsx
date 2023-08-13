@@ -22,7 +22,7 @@ interface user {
 }
 
 export default function ProfilePage() {
-  const session = useSession()
+  const session = useSession({ required: true });
   
   const { data, isLoading, isError, isSuccess } = useQuery({
     queryKey: ['feed'],

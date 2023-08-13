@@ -4,7 +4,7 @@ import React from 'react'
 import { CircularProgress } from '@mui/material'
 
 export default function Home() {
-  const session = useSession()
+  const session = useSession({required: true})
 
   if (session.status === 'loading') {
     return(<div className={`w-screen h-screen flex items-center justify-center`}>
