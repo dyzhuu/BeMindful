@@ -9,6 +9,9 @@
 
 [Click here to view the working app view online here](https://behealthy-teal.vercel.app).😊
 
+## Intro
+Welcome and Greetings to BeMindful! developed using Next.JS, Prisma, and Vercel. Within this repository, you will find the codebase for a daily gratitude journal tracker.
+
 ## Getting Started for Dev
 ```bash
 git clone https://github.com/dyzhuu/BeHealthy
@@ -32,3 +35,13 @@ vercel
 # Review everything to make sure it's accurate.
 # Deploy!
 ```
+
+## About BeMindful
+You can use your Google account to log in, and then it's like a live notification board. BeMindful isn't just a regular website – it's built using Next.JS, Prisma, and Vercel. It provides a simple and enjoyable place to record and think about the moments that make you feel grateful.
+
+## Tech Stack
+<B>Next.JS:</b> Front end frame work ensures fast dev time.
+
+<b>Prisma:</b>  Prisma ensures secure storage and efficient management of your mindful MYSQL records.
+
+<b>Vercel:</b> Vercel guarantees swift loading times, seamless updates, and a reliable environment.

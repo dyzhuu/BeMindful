@@ -9,7 +9,7 @@ export default async function handler(
   const { userId } = req.query;
   const feed = await prisma.user.findUnique({
     where: {
-      id: userId?.toString()
+      id: userId?.toString(),
     },
     include: {
       following: {
@@ -18,16 +18,20 @@ export default async function handler(
             include: {
               posts: {
                 include: {
-                  author: true
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-  })
+                  author: true,
+                  likes: {
+                    where: {
+                      userId: userId?.toString(),
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  });
   const ownPosts = (await prisma.user.findUnique({
     where: {
       id: userId?.toString(),
@@ -35,7 +39,12 @@ export default async function handler(
     include: {
       posts: {
         include: {
-          author: true
+          author: true,
+          likes: {
+            where: {
+              userId: userId?.toString()
+            }
+          }
         }
       }
     }
@@ -48,5 +57,14 @@ export default async function handler(
   allPosts.sort((a: any, b: any) => {
     return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
   });
-  res.status(200).json(allPosts);
+
+  const postsWithLikeInfo = allPosts.map((post: any) => {
+    const likedByUser = post.likes.length > 0;
+    return {
+      ...post,
+      likedByUser,
+    };
+  });
+
+  res.status(200).json(postsWithLikeInfo);
 }
